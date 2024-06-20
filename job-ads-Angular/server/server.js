@@ -1,11 +1,12 @@
 const express = require('express');
 const app = express();
-const cookieParser = require('cookie-parser');
 const cors = require('cors');
-const PORT = 3000;
+const cookieParser = require('cookie-parser');
+const { PORT, DB_URL, corsOprtions } = require('./constants');
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+app.use(cors(corsOprtions));
 app.use(cookieParser());
 
 
